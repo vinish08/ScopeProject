@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Owl Carousel CSS -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"> -->
+    <!-- Custom CSS -->
+    <link rel='stylesheet' href='https://scopeindia.org/css/global.css'>
+    <link rel='stylesheet' href='https://scopeindia.org/css/structure.css'>
+    <link rel='stylesheet' href='https://scopeindia.org/css/snowpark.css'>
+    <link rel='stylesheet' href='https://scopeindia.org/css/custom.css'>
+
+    <style>
+      
+        h1 {
+            color: #343a40;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+         
+        .course-details {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #fff;
+            text-align:center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .course-details li {
+            font-size: 18px;
+        }
+       
+        .enroll-link {
+            display: inline-block;
+            padding: 10px 20px;
+          
+            background-color: blue; 
+            color: rgb(0, 255, 0);
+            border-radius: 8px;
+          
+        }
+        /* Add your custom styles here if needed */
+    </style>
+</head>
+
+<body>
+    <div
+        style="background-image: url(https://scopeindia.org/images/snowpark-skis-headerbg2.jpg);background-repeat: no-repeat;background-size: cover;">
+        <!-- start -->
+        <!-- nav -->
+        <nav class=" navbar navbar-expand-lg sticky-top" style="background-color: #200572; ">
+            <div class=" container" id="nav1">
+                <ul class="navbar-nav mr-auto color-white">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home" style="color: white;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/course" style="color: white;">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login" style="color: white;">Login</a>
+                    </li>
+                </ul>
+                <a class="navbar-brand mx-auto"
+                    href="https://scopeindia.org/software-networking-testing-cloud-training-kerala-trivandrum-kochin"
+                    title="SCOPE INDIA - Software and Networking Professional Education Center">
+                    <img src="https://scopeindia.org/images/scope-india-logo-bird.png" alt="SCOPE INDIA"
+                        style="width: 70px; height: auto;">
+                </a>
+                <ul class="navbar-nav ml-auto color-white">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard" style="color: white;">DashBoard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: white;">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/registerform"><span><span class="register  bg-danger p-1    "
+                                    style="color: white;">
+                                    Register
+                                    Now</span></span></a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+         <!--  -->
+        <div class="section mcb-section dark bg-cover"
+            style="padding-top:250px; padding-bottom:150px; background-color:#041a6b!important; background-image:url(https://scopeindia.org/images/snowpark-skis-headerbg2.jpg); background-repeat:no-repeat; background-position:center bottom;    background-attachment: fixed!important;">
+            <div class="section_wrapper mcb-section-inner">
+                <div class="wrap mcb-wrap one valign-top clearfix">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column one column_column">
+                            <div class="column_attr clearfix align_center">
+                                 
+                                
+                                <h6 class="years17">All Trainers at SCOPE INDIA are working
+                                    professionals,
+                                    Software Engineers, Networking Engineers, and Software Test
+                                    Engineers of
+                                    Suffix E Solutions with <br /><strong>17 years of Industrial
+                                        experience</strong>.</h6>
+                                <h4 class="border border-info border-color-violet">4 months course +
+                                    <br class="brhidden">3 months on the Job Training
+                                </h4>
+                                <div class="border border-info border-color-turquoise batch-content batch-border">
+                                    <h4 class="batch-title"> Next Batches</h4>
+                                    <center>
+                                        <table class="batches">
+                                            <tbody>
+                                                <tr>
+                                                    <td>18<sup>th</sup> April 2024: </td>
+                                                    <td>Thampanoor TVM</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>04<sup>th</sup> April 2024:</td>
+                                                    <td> Technopark TVM</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>04<sup>th</sup> April 2024:</td>
+                                                    <td> Kochi</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>17<sup>th</sup> April 2024:</td>
+                                                    <td> Nagercoil</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>15<sup>th</sup> April 2024:</td>
+                                                    <td>Online</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </center>
+                                </div>
+                                <a class="footer_links" href="tel:+917592939481"
+                                    title="Click to talk to SCOPE INDIA's student care!"><img
+                                        src="https://scopeindia.org/images/scope-india-full-stack-offer-decslip2023%20(2).jpg"
+                                        alt="SCOPE INDIA Offers" class="offers"></a>
+                                <a class="footer_links" href="https://g.page/r/CXbW6SZGeJPfEAE"
+                                    title="SCOPE INDIA Google Map Location to Trivandrum, Kerala" target="_blank"><img
+                                        src="https://scopeindia.org/images/5star.png" class="star5"></a>
+                                <p class="text-center">Google 4.9 * Rated Institute</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- course -->
+
+
+         
+                    
+                    <div class="container">
+        <div class="course-details bg-secondary">
+            <h1 style="color:red; font-family:red serifs; ">Course Details</h1>
+            <ul>
+                <li style="color:skyblue;font-size:25px"><strong>Course Name:</strong> <span th:text="${course.coursename}"></span></li>
+                <li style="color:skyblue;font-size:25px"><strong>Course Duration:</strong> <span th:text="${course.courseduration}"></span></li>
+                <li style="color:skyblue;font-size:25px"><strong>Course Fee:</strong> <span th:text="${course.coursefee}"></span></li>
+            </ul>
+             <a class="enroll-link" th:href="@{'/saveid/' + ${courseid} + '?email=' + ${currentUser.email}}">Click here to enroll in the course</a>
+        </div>
+    </div>
+         <!-- Card End-->
+
+        <!-- viedo-->
+
+
+
+         
+        <!--  -->
+
+        <!-- End -->
+ <div class="section mcb-section bg-cover"
+            style="padding-top:100px; padding-bottom:150px; background-color:#041a6b!important; background-image:url(https://scopeindia.org/images/snowpark-home-slider-background.jpg); background-repeat:no-repeat; background-position:center bottom;background-attachment: fixed!important;">
+            <div class="section_wrapper mcb-section-inner">
+                <div class="wrap mcb-wrap one-third valign-top clearfix">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column one column_column">
+                            <div class="column_attr clearfix align_center">
+                                <h4 class="themecolor"><b>1000+</b></h4>
+                                <h5 style="color:#fff">STUDENTS ARE
+                                    <br>TRAINED EVERY YEAR
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap mcb-wrap one-third valign-top move-up clearfix" style="margin-top:-50px"
+                    data-mobile="no-up">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column one column_column">
+                            <div class="column_attr clearfix align_center">
+                                <h4 class="themecolor"><b>30+</b></h4>
+                                <h5 style="color:#fff">COMPUTER COURSES
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap mcb-wrap one-third valign-top clearfix">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column one column_column">
+                            <div class="column_attr clearfix align_center">
+                                <h4 class="themecolor"><b>95%</b></h4>
+                                <h5 style="color:#fff">STUDENTS ARE GETTING
+                                    <br>PLACED EVERY YEAR
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-decoration bottom"
+                style="background-image:url(https://scopeindia.org/images/snowpark-home-slide-decoration-bottomm.png);height:127px">
+            </div>
+        </div>
+
+
+        <footer id="Footer" class="clearfix">
+            <div class="widgets_wrapper" style="padding:70px 0">
+                <div class="container">
+                    <div class="column one">
+                        <aside class="widget_text widget widget_custom_html">
+                            <div class="textwidget custom-html-widget">
+                                <div style="text-align:center">
+                                    <div class="image_frame image_item no_link scale-with-grid aligncenter no_border">
+                                        <div class="image_wrapper">
+                                            <img class="scale-with-grid"
+                                                src="https://scopeindia.org/images/snowpark-footer-logo.png">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">Technopark TVM | Thampanoor TVM | Kochi, Kerala |
+                                            Nagercoil,
+                                            Tamil Nadu</div>
+                                    </div>
+                                    <hr class="no_line" style="margin:0 auto 30px">
+                                    <img class="scale-with-grid" alt="An ISO 9001:2015, IAS &amp; IFS Certified Company"
+                                        title="An ISO 9001:2015, IAS &amp; IAF Certified Company"
+                                        src="https://scopeindia.org/images/iso_iaflogo.png" width="400" height="100">
+                                    <p style="text-align:center;">An ISO 9001:2015 Certified Company</p>
+
+
+                                    <p style="text-align:center;">All Rights Reserved <a class="footer_links"
+                                            target="_blank" href="https://www.suffixesolutions.com/"
+                                            title="A trusted IT Partner"> Suffix E
+                                            Solutions </a>&copy; 2007-2023</p>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2"><a class="footer_links"
+                                                href="tel:+919745936073">9745936073
+                                                (TPK)
+                                            </a></div>
+                                        <div class="col-md-2"><a class="footer_links"
+                                                href="tel:+919745936073">9745936073
+                                                (TVM)
+                                            </a></div>
+                                        <div class="col-md-2"><a class="footer_links"
+                                                href="tel:+917592939481">7592939481
+                                                (EKM)
+                                            </a></div>
+                                        <div class="col-md-2"><a class="footer_links"
+                                                href="tel:+918075536185">8075536185
+                                                (NGL)
+                                            </a></div>
+                                        <div class="col-md-2"><a class="footer_links" target="_blank"
+                                                href="mailto:info@scopeindia.org"
+                                                style="outline: none;">info@scopeindia.org</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+                 </div>
+            </body>
+
+    </html> 
+
+ 

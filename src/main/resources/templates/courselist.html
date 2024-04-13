@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Custom CSS -->
+    <link rel='stylesheet' th:href='@{https://scopeindia.org/css/global.css}'>
+    <link rel='stylesheet' th:href='@{https://scopeindia.org/css/structure.css}'>
+    <link rel='stylesheet' th:href='@{https://scopeindia.org/css/snowpark.css}'>
+    <link rel='stylesheet' th:href='@{https://scopeindia.org/css/custom.css}'>
+
+     <style>
+        /*  body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align:center;
+            font-size: 18px; 
+        }  */
+        #co {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+       #co li {
+            margin-bottom: 10px;
+            
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+         li:hover {
+            transform: translateY(-3px);
+        }  
+       #co li a {
+            display: block;
+            padding: 15px;
+            color: #333333;
+            text-decoration: none;
+            text-align:center;
+            font-size: 18px; 
+        }
+         
+        
+    </style> 
+</head>
+
+<body>
+    <div
+        style="background-image: url(https://scopeindia.org/images/snowpark-skis-headerbg2.jpg);background-repeat: no-repeat;background-size: cover;">
+        <!-- start -->
+        <!-- nav -->
+        <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #200572;">
+            <div class="container" id="nav1">
+                <ul class="navbar-nav mr-auto color-white">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home" style="color: white;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/course" style="color: white;">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login" style="color: white;"> Login</a>
+                    </li>
+                </ul>
+                <a class="navbar-brand mx-auto"
+                    href="https://scopeindia.org/software-networking-testing-cloud-training-kerala-trivandrum-kochin"
+                    title="SCOPE INDIA - Software and Networking Professional Education Center">
+                    <img th:src="@{https://scopeindia.org/images/scope-india-logo-bird.png}" alt="SCOPE INDIA"
+                        style="width: 70px; height: auto;">
+                </a>
+                <ul class="navbar-nav ml-auto color-white">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard" style="color: white;"> DashBoard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: white;">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/registerform"><span><span class="register  bg-danger p-1    "
+                                    style="color: white;">
+                                    Register
+                                    Now</span></span></a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+        <!-- star -->
+        <div class="section_wrapper mcb-section-inner" style="margin-top: 70px;">
+            <div class="wrap mcb-wrap one valign-top clearfix">
+                <div class="mcb-wrap-inner">
+                    <div class="column mcb-column one column_column">
+                        <div class="column_attr clearfix align_center">
+                            <h1 class="logo-text" style="color: orange;"><em>SCOPE</em> INDIA</h1>
+                            <h2 style="color:white">Center for Software, Networking, & Cloud Education</h2>
+                            <!--<h6>Our Courses</h6>-->
+
+                            <h6 class="years17" style="color: white;">All Trainers at SCOPE INDIA are working
+                                professionals, Software
+                                Engineers,
+                                Networking Engineers, and Software Test Engineers of Suffix E Solutions with
+                                <br /><strong>17
+                                    years of Industrial experience</strong>.
+                            </h6>
+
+                            <a class="footer_links" 
+                                title="SCOPE INDIA Google Map Location to Trivandrum, Kerala" target="_blank"><img
+                                    src="https://scopeindia.org/images/5star.png" class="star5"></a>
+                            <p class="text-center" style="color:white">Google 4.9 * Rated Institute</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- course -->
+
+<h1 th:text="${message}" style="text-align:center;color:green;padding:30px"></h1>
+        <div class="container">
+            <!-- Course content -->
+            <div class="row" id="courses">
+            	 
+                <h3 style="color:white">Software Programming Courses</h3>
+                 
+            </div>
+             
+            <ul id="co">
+         
+        
+        <li  th:each="course : ${courses}">
+            <a th:href="@{/coursedetails/{courseid}(courseid=${course.courseid})}" th:text="${course.coursename}"></a>
+        </li>
+    </ul>
+           </div>
+         
+
+        <!-- viedo-->
+
+
+
+        <div class="section mcb-section"
+            style="padding-top:50px; padding-bottom:50px; background-color:#041a6b!important;margin-top: 300px;">
+            <div class="section_wrapper mcb-section-inner">
+                <div class="wrap mcb-wrap one valign-top bg-cover move-up clearfix"
+                    style="padding:3%; margin-top:-160px!important; background-image:url(https://scopeindia.org/images/si-call-back-bg.jpg); background-repeat:no-repeat; background-position:center top"
+                    data-mobile="no-up">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column one-second column_image">
+                            <div class="image_frame image_item no_link scale-with-grid no_border">
+                                <div class="image_wrapper">
+                                    <iframe width="853" height="480"
+                                        src="https://www.youtube.com/embed/eIFj4nYNYbw?autoplay=1&amp;rel=0"
+                                        frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column mcb-column one-second column_column">
+                            <div class="column_attr clearfix" style="padding:0 8%">
+                                 
+                                <h2>We are open 365 days</h2>
+                                 
+                                <p>
+                                    SCOPE INDIA is open 7/24 hrs to talk to you and listen to your queries.
+                                </p>
+
+                                 
+                                <form th:action="@{/sendmail}" method="POST" th:object="${usercontact}" class="needs-validation" novalidate>
+                            <div class="form-group">
+                <label for="name" style="color: black;">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" th:field="*{name}" required>
+                <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="form-group">
+            <label for="number" style="color: black;">Number:</label>
+            <input type="text" class="form-control" id="number" name="number" placeholder="Enter your number" th:field="*{number}" required>
+            <div class="invalid-feedback">Please enter your number.</div>
+        </div>
+        <div class="form-group">
+            <label for="message" style="color: black;">Message:</label>
+            <textarea class="form-control" id="message" name="message" placeholder="Enter your message" th:field="*{message}" required></textarea>
+            <div class="invalid-feedback">Please enter your message.</div>
+        </div> 
+        <button type="submit" class="btn btn-primary">Call Me</button>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  -->
+        <div class="section mcb-section bg-cover"
+            style="padding-top:100px; padding-bottom:150px; background-color:#041a6b!important; background-image:url(https://scopeindia.org/images/snowpark-home-slider-background.jpg); background-repeat:no-repeat; background-position:center bottom;background-attachment: fixed!important;">
+            <div class="section_wrapper mcb-section-inner">
+                <div class="wrap mcb-wrap one-third valign-top clearfix">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column one column_column">
+                            <div class="column_attr clearfix align_center">
+                                <h4 class="themecolor"><b>1000+</b></h4>
+                                <h5 style="color:#fff">STUDENTS ARE
+                                    <br>TRAINED EVERY YEAR
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap mcb-wrap one-third valign-top move-up clearfix" style="margin-top:-50px"
+                    data-mobile="no-up">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column one column_column">
+                            <div class="column_attr clearfix align_center">
+                                <h4 class="themecolor"><b>30+</b></h4>
+                                <h5 style="color:#fff">COMPUTER COURSES
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap mcb-wrap one-third valign-top clearfix">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column one column_column">
+                            <div class="column_attr clearfix align_center">
+                                <h4 class="themecolor"><b>95%</b></h4>
+                                <h5 style="color:#fff">STUDENTS ARE GETTING
+                                    <br>PLACED EVERY YEAR
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-decoration bottom"
+                style="background-image:url(https://scopeindia.org/images/snowpark-home-slide-decoration-bottomm.png);height:127px">
+            </div>
+        </div>
+
+
+        <footer id="Footer" class="clearfix">
+            <div class="widgets_wrapper" style="padding:70px 0">
+                <div class="container">
+                    <div class="column one">
+                        <aside class="widget_text widget widget_custom_html">
+                            <div class="textwidget custom-html-widget">
+                                <div style="text-align:center">
+                                    <div class="image_frame image_item no_link scale-with-grid aligncenter no_border">
+                                        <div class="image_wrapper">
+                                            <img class="scale-with-grid"
+                                                src="https://scopeindia.org/images/snowpark-footer-logo.png">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">Technopark TVM | Thampanoor TVM | Kochi, Kerala |
+                                            Nagercoil,
+                                            Tamil Nadu</div>
+                                    </div>
+                                    <hr class="no_line" style="margin:0 auto 30px">
+                                    <img class="scale-with-grid" alt="An ISO 9001:2015, IAS &amp; IFS Certified Company"
+                                        title="An ISO 9001:2015, IAS &amp; IAF Certified Company"
+                                        src="https://scopeindia.org/images/iso_iaflogo.png" width="400" height="100">
+                                    <p style="text-align:center;">An ISO 9001:2015 Certified Company</p>
+
+
+                                    <p style="text-align:center;">All Rights Reserved <a class="footer_links"
+                                            target="_blank" href="https://www.suffixesolutions.com/"
+                                            title="A trusted IT Partner"> Suffix E
+                                            Solutions </a>&copy; 2007-2023</p>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2"><a class="footer_links"
+                                                href="tel:+919745936073">9745936073
+                                                (TPK)
+                                            </a></div>
+                                        <div class="col-md-2"><a class="footer_links"
+                                                href="tel:+919745936073">9745936073
+                                                (TVM)
+                                            </a></div>
+                                        <div class="col-md-2"><a class="footer_links"
+                                                href="tel:+917592939481">7592939481
+                                                (EKM)
+                                            </a></div>
+                                        <div class="col-md-2"><a class="footer_links"
+                                                href="tel:+918075536185">8075536185
+                                                (NGL)
+                                            </a></div>
+                                        <div class="col-md-2"><a class="footer_links" target="_blank"
+                                                href="mailto:info@scopeindia.org"
+                                                style="outline: none;">info@scopeindia.org</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-+0h0z5htU5zAzGqczDvHsu5YTDjP1x5LZcTjtJ0b5FgAb4+Jx0pz5yFfDQKYLbQ4" crossorigin="anonymous"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Custom JS -->
+    <script th:src="@{https://scopeindia.org/js/scopeindia.js}"></script>
+</body>
+
+</html>
+

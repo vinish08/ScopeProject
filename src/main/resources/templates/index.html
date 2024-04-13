@@ -1,0 +1,403 @@
+  <!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script type="text/javascript" th:src="@{/ajaxe.js}"></script>
+    
+  </head>
+  <body class="bg-secondary">
+  
+   <div th:style="'background-image: url(https://scopeindia.org/images/snowpark-skis-headerbg2.jpg);background-repeat: no-repeat;background-size: cover;'">
+         
+        <nav class="navbar navbar-expand-lg sticky-top" th:style="'background-color: #200572;'">
+            <div class="container" id="nav1">
+                <ul class="navbar-nav mr-auto color-white">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home" style="color: white;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/course" style="color: white;">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login" style="color: white;">Login</a>
+                    </li>
+                </ul>
+                <a class="navbar-brand mx-auto"
+                    href="https://scopeindia.org/software-networking-testing-cloud-training-kerala-trivandrum-kochin"
+                    title="SCOPE INDIA - Software and Networking Professional Education Center">
+                    <img src="https://scopeindia.org/images/scope-india-logo-bird.png" alt="SCOPE INDIA"
+                        style="width: 70px; height: auto;">
+                </a>
+                <ul class="navbar-nav ml-auto color-white">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard" style="color: white;">DashBoard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact" style="color: white;">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/registerform"><span><span class="register bg-danger p-1"
+                                    style="color: white;">Register Now</span></span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    <!-- <h1 class="bg-danger text-center">Scope India!.....</h1> -->
+    <div class="mcb-wrap-inner  " style="margin-top:50px">
+                                      <div class="column mcb-column one column_column  ">
+                                          <div class="column_attr clearfix align_center" >
+                                              <h1 style="text-align:center;color:yellow; ">Registration</h1>
+                                              <h2 style="text-align:center;color:white">It's just a matter of 80 days to an IT job!</h2>
+
+                                          </div>
+                                      </div>
+                                  </div>
+    
+      
+     <div class="container p-2  " style="margin-top:50px">
+      <div class="row">
+     <div class="col-md-6 offset-md-3 ">
+     <div class="card  ">
+     <div class="card-body  ">
+     
+     
+     <h3 class="text-center">REGISTRATION FORM </h3>
+     
+      
+     
+      
+      
+     <form th:action="@{/register}" th:object="${user}" method="post" enctype="multipart/form-data" >
+     
+     
+     <div class="form-group">
+     <label for="example1">First Name</label>
+     <input type="text" class="form-control" id="example1" name="firstname" th:field="*{firstname}" aria-describedby="emailHelp" required>
+     </div>
+      <br/>
+     
+     <div class="form-group">
+     <label for=example2>Last Name</label>
+     <input type="text" class="form-control" id="example2" name="lastname" th:field="*{lastname}" aria-describedby="emailHelp" required>
+     </div>
+    
+     <br/>
+     <div  class="form-group">
+     <label for="example3">Gender</label>
+     <div  class=" form-check  form-check-inline">
+     <input type="radio" class="form-input" name="gender" th:field="*{gender}" id="radio1" value="male">
+     <label for="radio1" class="form-check-label">Male</label>
+     </div>
+     <div class="form-check form-check-inline">
+     <input type="radio" class="form-check-input" name="gender" th:field="*{gender}" id="radio2" value="female">
+     <label class="form-check-label" for="radio2">Female</label>
+     </div>
+     </div>
+     
+ <br/>
+     <div class="form-group">
+     <label for="example4">DOB</label>
+     <input type="date" class="form-control" id="example4" name="dob" th:field="*{dob}" aria-describedby="emailHelp" required>
+     </div>
+     
+      <br/>
+     <div class="form-group">
+     <label for="example5">Email Address</label>
+     <input type="email" class="form-control" id="example5" name="email" th:field="*{email}" aria-describedby="emailHelp" required>
+     </div>
+     
+      <br/>
+     <div class="form-group">
+     <label for="example6">Phone Number</label>
+     <input type="tel" class="form-control" id="example6" name="phonenumber" th:field="*{phonenumber}" aria-describedby="emailHelp">
+     </div>
+      <br/>
+      <div class="form-group">
+      <label for="example7">Choose Country</label> 
+      <select id="example7" name="country" th:field="*{country}" class="form-control" >
+      <option value="0">Select Country</option>
+            <option th:each="country:${countryList}" th:text="${country.name}" th:value="${country.id}" ></option>
+             
+      
+      </select>
+      </div>
+     <br/>
+    
+      <div class="form-group">
+    <label for="example8">State</label>
+    <select id="example8" name="state" th:field="*{state}" class="form-control">
+    <option value="0">Select State</option>
+     
+    </select>
+    </div>
+     <br/>
+    
+    <div class="form-group">
+    <label for="example9">Choose City</label>
+    <select id="example9" class="form-control" name="city" th:field="*{city}">
+    <option value="0">Select City </option>
+     
+    </select>
+    </div>
+     <br/>
+    <div class="form-group">
+    <label for="hob">Hobbies</label>
+    <div class="form-check form-check-inline">
+    <input type="checkbox" class="form-input" id="hobbie1" name="hobbies" th:field="*{hobbies}" value="driving">
+    <label for="hobbie1" class="form-check-label">Driving</label>
+    </div>
+    
+    <div class="form-check form-check-inline">
+    <input type="checkbox" class="form-check-input" id="hobbie2" name="hobbies" th:field="*{hobbies}" value="playing">
+    <label for="hobbie2" class="form-check-label">Playing</label>
+    </div>
+    
+    </div>
+     <br/>
+    
+    
+     <div class="form-group">
+    <label for="avatar">Upload Avatar</label>
+    <input type="file" class="form-control" id="avatar" name="uploadavatar" th:field="*{uploadavatar}"  >
+    </div>
+    
+    <br/> 
+     
+     
+     
+    
+    <button type="submit" class="btn btn-success form-control">Register</button>
+    
+     </form>
+     
+     
+         </div>
+     
+     
+              </div>
+     
+     
+                   </div>
+     
+     
+                         </div>
+     
+     
+                                </div>
+     
+     <div class="section mcb-section dark" th:style="'padding-top:30px; padding-bottom:100px; background-color:#051a69'">
+            
+            <div class="container">
+                <h2 style="color:white">Locations</h2>
+                <div class="row locations">
+
+                    <div class="col-md-6">
+                        <div class="thumbnail"
+                            th:style="'background-color:#041a6b!important; padding:30px 30px 10px 30px; border: 2px solid white; color:white'">
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li>
+                                    <h3>Technopark TVM, Kerala</h3>
+                                </li>
+                                <li class="address" style="margin: 10px; color:white">
+                                    <span class="icon"><i class="icon-location"></i></span>
+                                    <span class="address_wrapper">Phase 1, Main Gate, Diamond Arcade, Near Technopark,
+                                        Trivandrum</span>
+                                </li>
+                                <li class="phone phone-1" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-phone"></i></span>
+                                    <a class="footer_links" th:href="'tel:+919745936073'" style="outline: none; color: white; text-decoration: none;">9745936073</a>
+                                </li>
+                                <li class="mail" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-mail"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'mailto:info@scopeindia.org'" style="outline: none; color: white; text-decoration: none;">technopark@scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-link"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://scopeindia.org/'" style="outline: none; color: white; text-decoration: none;">www.scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-map"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://maps.app.goo.gl/hbG8wSiDcW2w9kyH9'" style="outline: none; color: white; text-decoration: none;"
+                                        target="_blank">Location Route Map</a>
+                                </li>
+                            </ul>
+                            <br>
+
+                        </div>
+                        <br>
+                    </div>
+                   <div class="col-md-6">
+                        <div class="thumbnail"
+                            th:style="'background-color:#041a6b!important; padding:30px 30px 10px 30px; border: 2px solid white; color:white'">
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li>
+                                    <h3>Technopark TVM, Kerala</h3>
+                                </li>
+                                <li class="address" style="margin: 10px; color:white">
+                                    <span class="icon"><i class="icon-location"></i></span>
+                                    <span class="address_wrapper">Phase 1, Main Gate, Diamond Arcade, Near Technopark,
+                                        Trivandrum</span>
+                                </li>
+                                <li class="phone phone-1" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-phone"></i></span>
+                                    <a class="footer_links" th:href="'tel:+919745936073'" style="outline: none; color: white; text-decoration: none;">9745936073</a>
+                                </li>
+                                <li class="mail" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-mail"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'mailto:info@scopeindia.org'" style="outline: none; color: white; text-decoration: none;">technopark@scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-link"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://scopeindia.org/'" style="outline: none; color: white; text-decoration: none;">www.scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-map"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://maps.app.goo.gl/hbG8wSiDcW2w9kyH9'" style="outline: none; color: white; text-decoration: none;"
+                                        target="_blank">Location Route Map</a>
+                                </li>
+                            </ul>
+                            <br>
+
+                        </div>
+                        <br>
+                    </div>
+                   <div class="col-md-6">
+                        <div class="thumbnail"
+                            th:style="'background-color:#041a6b!important; padding:30px 30px 10px 30px; border: 2px solid white; color:white'">
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li>
+                                    <h3>Technopark TVM, Kerala</h3>
+                                </li>
+                                <li class="address" style="margin: 10px; color:white">
+                                    <span class="icon"><i class="icon-location"></i></span>
+                                    <span class="address_wrapper">Phase 1, Main Gate, Diamond Arcade, Near Technopark,
+                                        Trivandrum</span>
+                                </li>
+                                <li class="phone phone-1" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-phone"></i></span>
+                                    <a class="footer_links" th:href="'tel:+919745936073'" style="outline: none; color: white; text-decoration: none;">9745936073</a>
+                                </li>
+                                <li class="mail" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-mail"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'mailto:info@scopeindia.org'" style="outline: none; color: white; text-decoration: none;">technopark@scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-link"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://scopeindia.org/'" style="outline: none; color: white; text-decoration: none;">www.scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-map"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://maps.app.goo.gl/hbG8wSiDcW2w9kyH9'" style="outline: none; color: white; text-decoration: none;"
+                                        target="_blank">Location Route Map</a>
+                                </li>
+                            </ul>
+                            <br>
+
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="thumbnail"
+                            th:style="'background-color:#041a6b!important; padding:30px 30px 10px 30px; border: 2px solid white; color:white'">
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li>
+                                    <h3>Technopark TVM, Kerala</h3>
+                                </li>
+                                <li class="address" style="margin: 10px; color:white">
+                                    <span class="icon"><i class="icon-location"></i></span>
+                                    <span class="address_wrapper">Phase 1, Main Gate, Diamond Arcade, Near Technopark,
+                                        Trivandrum</span>
+                                </li>
+                                <li class="phone phone-1" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-phone"></i></span>
+                                    <a class="footer_links" th:href="'tel:+919745936073'" style="outline: none; color: white; text-decoration: none;">9745936073</a>
+                                </li>
+                                <li class="mail" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-mail"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'mailto:info@scopeindia.org'" style="outline: none; color: white; text-decoration: none;">technopark@scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-link"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://scopeindia.org/'" style="outline: none; color: white; text-decoration: none;">www.scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-map"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://maps.app.goo.gl/hbG8wSiDcW2w9kyH9'" style="outline: none; color: white; text-decoration: none;"
+                                        target="_blank">Location Route Map</a>
+                                </li>
+                            </ul>
+                            <br>
+
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="thumbnail"
+                            th:style="'background-color:#041a6b!important; padding:30px 30px 10px 30px; border: 2px solid white; color:white'">
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li>
+                                    <h3>Technopark TVM, Kerala</h3>
+                                </li>
+                                <li class="address" style="margin: 10px; color:white">
+                                    <span class="icon"><i class="icon-location"></i></span>
+                                    <span class="address_wrapper">Phase 1, Main Gate, Diamond Arcade, Near Technopark,
+                                        Trivandrum</span>
+                                </li>
+                                <li class="phone phone-1" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-phone"></i></span>
+                                    <a class="footer_links" th:href="'tel:+919745936073'" style="outline: none; color: white; text-decoration: none;">9745936073</a>
+                                </li>
+                                <li class="mail" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-mail"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'mailto:info@scopeindia.org'" style="outline: none; color: white; text-decoration: none;">technopark@scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-link"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://scopeindia.org/'" style="outline: none; color: white; text-decoration: none;">www.scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-map"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://maps.app.goo.gl/hbG8wSiDcW2w9kyH9'" style="outline: none; color: white; text-decoration: none;"
+                                        target="_blank">Location Route Map</a>
+                                </li>
+                            </ul>
+                            <br>
+
+                        </div>
+                        <br>
+                    </div>
+                    
+                     
+                </div>
+
+            </div>
+        </div>
+        
+
+        
+     
+     
+      
+   </div>
+  </body>
+</html>

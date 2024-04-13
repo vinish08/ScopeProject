@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    
+    <link rel='stylesheet' th:href='@{https://scopeindia.org/css/global.css}'>
+    <link rel='stylesheet' th:href='@{https://scopeindia.org/css/structure.css}'>
+    <link rel='stylesheet' th:href='@{https://scopeindia.org/css/snowpark.css}'>
+    <link rel='stylesheet' th:href='@{https://scopeindia.org/css/custom.css}'>
+</head>
+
+<body>
+    <div th:style="'background-image: url(https://scopeindia.org/images/snowpark-skis-headerbg2.jpg);background-repeat: no-repeat;background-size: cover;'">
+        
+        <nav class="navbar navbar-expand-lg sticky-top" th:style="'background-color: #200572;'">
+            <div class="container" id="nav1">
+                <ul class="navbar-nav mr-auto color-white">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home" style="color: white;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/course" style="color: white;">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login" style="color: white;"> Login</a>
+                    </li>
+                </ul>
+                <a class="navbar-brand mx-auto"
+                    href="https://scopeindia.org/software-networking-testing-cloud-training-kerala-trivandrum-kochin"
+                    title="SCOPE INDIA - Software and Networking Professional Education Center">
+                    <img src="https://scopeindia.org/images/scope-india-logo-bird.png" alt="SCOPE INDIA"
+                        style="width: 70px; height: auto;">
+                </a>
+                <ul class="navbar-nav ml-auto color-white">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard" style="color: white;">DashBoard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact" style="color: white;">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/registerform"><span><span class="register bg-danger p-1"
+                                    style="color: white;">Register Now</span></span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        
+         
+        
+        
+
+                     
+ 
+        <div class="section mcb-section dark bg-cover"
+            th:style="'padding-top:250px; padding-bottom:40px; background-color:#051a69; background-image:url(https://scopeindia.org/images/snowpark-skis-headerbg2.jpg); background-repeat:no-repeat; background-position:center top'">
+            <div class="section_wrapper mcb-section-inner">
+                <div class="wrap mcb-wrap one valign-top clearfix">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column one column_column">
+                            <div class="column_attr clearfix align_center">
+                                <h1>SCOPE INDIA is open 365 days a year</h1>
+                                <h2>Let's discuss your career, 24/7 free Consultation</h2>
+                                <a class="footer_links"
+                                    th:href="@{https://g.page/r/CXbW6SZGeJPfEAE}"
+                                    title="SCOPE INDIA Google Map Location to Trivandrum, Kerala" target="_blank"><img
+                                        src="https://scopeindia.org/images/5star.png" class="star5"></a>
+                                <p class="text-center">Google 4.9 * Rated Institute</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 
+                
+                 
+                
+                
+            </div>
+        </div>
+
+         <div class="container bg-secondary  " style="margin-top:30px">
+    <form th:action="@{/sendmail}" method="POST" th:object="${usercontact}" class="needs-validation" novalidate>
+        <h3 class="mb-3" style="color: rgb(139, 196, 53); margin-top:60px ;text-align:center;padding:20px"><strong>GET A FREE CALL BACK</strong></h3>
+        
+        
+        <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="name" style="color: black;">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" th:field="*{name}" required>
+                <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="form-group">
+            <label for="number" style="color: black;">Number:</label>
+            <input type="text" class="form-control" id="number" name="number" placeholder="Enter your number" th:field="*{number}" required>
+            <div class="invalid-feedback">Please enter your number.</div>
+        </div>
+        <div class="form-group">
+            <label for="message" style="color: black;">Message:</label>
+            <textarea class="form-control" id="message" name="message" placeholder="Enter your message" th:field="*{message}" required></textarea>
+            <div class="invalid-feedback">Please enter your message.</div>
+        </div> 
+        <button type="submit" class="btn btn-primary">Call Me</button>
+        </div>
+</div>
+   </div>  
+    </form>
+    <h3 style="color: violet;" th:text="${success}"></h3>
+        </div>
+    
+        
+
+
+        <div class="section mcb-section dark" th:style="'padding-top:30px; padding-bottom:100px; background-color:#051a69'">
+            
+            <div class="container">
+                <h2>Locations</h2>
+                <div class="row locations">
+
+                    <div class="col-md-6">
+                        <div class="thumbnail"
+                            th:style="'background-color:#041a6b!important; padding:30px 30px 10px 30px; border: 2px solid white;'">
+                            <ul>
+                                <li>
+                                    <h3>Technopark TVM, Kerala</h3>
+                                </li>
+                                <li class="address" style="margin: 10px;">
+                                    <span class="icon"><i class="icon-location"></i></span>
+                                    <span class="address_wrapper">Phase 1, Main Gate, Diamond Arcade, Near Technopark,
+                                        Trivandrum</span>
+                                </li>
+                                <li class="phone phone-1" style="margin: 10px;">
+                                    <span class="icon"><i class="icon-phone"></i></span>
+                                    <a class="footer_links" th:href="'tel:+919745936073'">9745936073</a>
+                                </li>
+                                <li class="mail" style="margin: 10px;">
+                                    <span class="icon"><i class="icon-mail"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'mailto:info@scopeindia.org'">technopark@scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;">
+                                    <span class="icon"><i class="icon-link"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://scopeindia.org/'">www.scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;">
+                                    <span class="icon"><i class="icon-map"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://maps.app.goo.gl/hbG8wSiDcW2w9kyH9'"
+                                        target="_blank">Location Route Map</a>
+                                </li>
+                            </ul>
+                            <br>
+
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="thumbnail"
+                            th:style="'background-color:#041a6b!important; padding:30px 30px 10px 30px; border: 2px solid white; color:white'">
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li>
+                                    <h3>Thampanoor TVM, Kerala</h3>
+                                </li>
+                                <li class="address" style="margin: 10px; color:white">
+                                    <span class="icon"><i class="icon-location"></i></span>
+                                    <span class="address_wrapper">TC 25/1403/3, Athens Plaza, SS Kovil Road, Thampanoor, Trivandrum, Kerala 695001</span>
+                                </li>
+                                <li class="phone phone-1" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-phone"></i></span>
+                                    <a class="footer_links" th:href="'tel:+919745936073'" style="outline: none; color: white; text-decoration: none;">9745936073</a>
+                                </li>
+                                <li class="mail" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-mail"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'mailto:info@scopeindia.org'" style="outline: none; color: white; text-decoration: none;">info@scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-link"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://scopeindia.org/'" style="outline: none; color: white; text-decoration: none;">www.scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-map"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://maps.app.goo.gl/hbG8wSiDcW2w9kyH9'" style="outline: none; color: white; text-decoration: none;"
+                                        target="_blank">Location Route Map</a>
+                                </li>
+                            </ul>
+                            <br>
+
+                        </div>
+                        <br>
+                    </div>
+                   <div class="col-md-6">
+                        <div class="thumbnail"
+                            th:style="'background-color:#041a6b!important; padding:30px 30px 10px 30px; border: 2px solid white; color:white'">
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li>
+                                    <h3>Kochi, Kerala</h3>
+                                </li>
+                                <li class="address" style="margin: 10px; color:white">
+                                    <span class="icon"><i class="icon-location"></i></span>
+                                    <span class="address_wrapper">SCOPE INDIA, Vasanth Nagar Rd, near JLN Metro Station, Kaloor, Kochi, Kerala 682025</span>
+                                </li>
+                                <li class="phone phone-1" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-phone"></i></span>
+                                    <a class="footer_links" th:href="'tel:+919745936073'" style="outline: none; color: white; text-decoration: none;">7592939481</a>
+                                </li>
+                                <li class="mail" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-mail"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'mailto:info@scopeindia.org'" style="outline: none; color: white; text-decoration: none;">kochi@scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-link"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://scopeindia.org/'" style="outline: none; color: white; text-decoration: none;">www.scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-map"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://maps.app.goo.gl/hbG8wSiDcW2w9kyH9'" style="outline: none; color: white; text-decoration: none;"
+                                        target="_blank">Location Route Map</a>
+                                </li>
+                            </ul>
+                            <br>
+
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="thumbnail"
+                            th:style="'background-color:#041a6b!important; padding:30px 30px 10px 30px; border: 2px solid white; color:white'">
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li>
+                                    <h3>Nagercoil, Tamil Nadu</h3>
+                                </li>
+                                <li class="address" style="margin: 10px; color:white">
+                                    <span class="icon"><i class="icon-location"></i></span>
+                                    <span class="address_wrapper">SCOPE INDIA, Near WCC College, Palace Rd, Nagercoil, Tamil Nadu 629001</span>
+                                </li>
+                                <li class="phone phone-1" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-phone"></i></span>
+                                    <a class="footer_links" th:href="'tel:+919745936073'" style="outline: none; color: white; text-decoration: none;">8075536185</a>
+                                </li>
+                                <li class="mail" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-mail"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'mailto:info@scopeindia.org'" style="outline: none; color: white; text-decoration: none;">ngl@scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-link"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://scopeindia.org/'" style="outline: none; color: white; text-decoration: none;">www.scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-map"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://maps.app.goo.gl/hbG8wSiDcW2w9kyH9'" style="outline: none; color: white; text-decoration: none;"
+                                        target="_blank">Location Route Map</a>
+                                </li>
+                            </ul>
+                            <br>
+
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="thumbnail"
+                            th:style="'background-color:#041a6b!important; padding:30px 30px 10px 30px; border: 2px solid white; color:white'">
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li>
+                                    <h3>Nagercoil, Tamil Nadu</h3>
+                                </li>
+                                <li class="address" style="margin: 10px; color:white">
+                                    <span class="icon"><i class="icon-location"></i></span>
+                                    <span class="address_wrapper">SCOPE INDIA, Pharma Street, 5/2 Ward 28, Distillery Road, Putheri Nagercoil 
+                                              (Near WCC Jn)</span>
+                                </li>
+                                <li class="phone phone-1" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-phone"></i></span>
+                                    <a class="footer_links" th:href="'tel:+919745936073'" style="outline: none; color: white; text-decoration: none;">8075536185</a>
+                                </li>
+                                <li class="mail" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-mail"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'mailto:info@scopeindia.org'" style="outline: none; color: white; text-decoration: none;">ngl@scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-link"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://scopeindia.org/'" style="outline: none; color: white; text-decoration: none;">www.scopeindia.org</a>
+                                </li>
+                                <li class="www" style="margin: 10px;color:white">
+                                    <span class="icon"><i class="icon-map"></i></span>
+                                    <a class="footer_links"
+                                        th:href="'https://maps.app.goo.gl/hbG8wSiDcW2w9kyH9'" style="outline: none; color: white; text-decoration: none;"
+                                        target="_blank">Location Route Map</a>
+                                </li>
+                            </ul>
+                            <br>
+
+                        </div>
+                        <br>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+         
+
+        <footer id="Footer" class="clearfix">
+            <div class="widgets_wrapper" style="padding:70px 0">
+                <div class="container">
+                    <div class="column one">
+                        <aside class="widget_text widget widget_custom_html">
+                            <div class="textwidget custom-html-widget">
+                                <div style="text-align:center">
+                                    <div class="image_frame image_item no_link scale-with-grid aligncenter no_border">
+                                        <div class="image_wrapper">
+                                            <img class="scale-with-grid"
+                                                src="https://scopeindia.org/images/snowpark-footer-logo.png">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">Technopark TVM | Thampanoor TVM | Kochi,
+                                            Kerala |
+                                            Nagercoil,
+                                            Tamil Nadu</div>
+                                    </div>
+                                    <hr class="no_line" style="margin:0 auto 30px">
+                                    <img class="scale-with-grid"
+                                        th:src="@{https://scopeindia.org/images/iso_iaflogo.png}"
+                                        alt="An ISO 9001:2015, IAS &amp; IFS Certified Company"
+                                        title="An ISO 9001:2015, IAS &amp; IAF Certified Company" width="400"
+                                        height="100">
+                                    <p style="text-align:center;">An ISO 9001:2015 Certified Company</p>
+                                    <p style="text-align:center;">All Rights Reserved <a class="footer_links"
+                                            target="_blank" th:href="'https://www.suffixesolutions.com/'"
+                                            title="A trusted IT Partner">Suffix E Solutions </a>&copy; 2007-2023
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2"><a class="footer_links"
+                                                th:href="'tel:+919745936073'">9745936073 (TPK)</a></div>
+                                        <div class="col-md-2"><a class="footer_links"
+                                                th:href="'tel:+919745936073'">9745936073 (TVM)</a></div>
+                                        <div class="col-md-2"><a class="footer_links"
+                                                th:href="'tel:+917592939481'">7592939481 (EKM)</a></div>
+                                        <div class="col-md-2"><a class="footer_links"
+                                                th:href="'tel:+918075536185'">8075536185 (NGL)</a></div>
+                                        <div class="col-md-2"><a class="footer_links"
+                                                th:href="'mailto:info@scopeindia.org'"
+                                                style="outline: none;">info@scopeindia.org</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+         
+    </div>
+</body>
+
+</html>
