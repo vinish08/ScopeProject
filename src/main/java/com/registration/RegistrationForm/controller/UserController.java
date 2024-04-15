@@ -60,12 +60,12 @@ public class UserController {
 	@Autowired
 	private CourseRepository coro;
 	
-	@RequestMapping("/home")
+	@GetMapping("/home")
 	public String home(Model model) {
 		model.addAttribute("usercontact", new Contact());
 		return "home";
 	}
-@RequestMapping("/registerform")
+@GetMapping("/registerform")
 public String form(Model model) {
 	List<Country>countryList=countryservice.countrylist();
 	model.addAttribute("countryList",countryList);
@@ -98,7 +98,7 @@ private String getSiteURL(HttpServletRequest request) {
 	String siteurl=request.getRequestURL().toString();
 	return siteurl.replace(request.getServletPath(),"");
 }
-@RequestMapping("/verify")
+@GetMapping("/verify")
 public String verify(@Param("code")String code,Model model) {
 	System.out.println(code);
 	if(service.verify(code)) {
@@ -111,7 +111,7 @@ public String verify(@Param("code")String code,Model model) {
 
 
 
-@RequestMapping("/dashboard")
+@GetMapping("/dashboard")
 public String dash(Model model,HttpSession session,HttpServletResponse response) {
 	String email=(String)session.getAttribute("loggedEmail");
 	User user=repository.findByEmail(email);
@@ -260,13 +260,13 @@ public String login(@RequestParam("email")String email,@RequestParam("password")
 	}
 	 
 }
- @RequestMapping("/forgo-pass")
+ @GetMapping("/forgo-pass")
  public String changepassword(Model model) {
 	 model.addAttribute("user",new User());
 	 return "forgotpassword";
  }
  
- @RequestMapping("/forgotpass") 
+ @GetMapping("/forgotpass") 
  public String resetpassword(@ModelAttribute("user") User user) {
 	 User use=service.getuserbyemail(user.getEmail());
 	 use.setPassword(user.getPassword());
@@ -451,7 +451,7 @@ public String login(@RequestParam("email")String email,@RequestParam("password")
 
  
  
- @RequestMapping("/logout")
+ @GetMapping("/logout")
  public String logout(HttpSession session,HttpServletResponse response) {
 	 session.invalidate();
 	 return "redirect:/login";
@@ -461,7 +461,7 @@ public String login(@RequestParam("email")String email,@RequestParam("password")
  
  
  
- @RequestMapping("/contact")
+ @GetMapping("/contact")
 	public String contact(Model model) {
  	 model.addAttribute("usercontact", new Contact());
 		 
